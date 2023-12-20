@@ -1,0 +1,149 @@
+* {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+#container {
+    margin: 20px;
+   
+}
+
+.cuadro {
+    position: fixed;
+    width: 67vmin;
+    height: 67vmin;
+    display: flex;
+    top: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+    padding-right: calc(82.7vmin - 67vmin);
+}
+
+#preview {
+    width: 50%;
+    height: 50%;
+    margin: 20px;
+    border: 2px solid #333;
+    transition: all 0.3s ease-in-out;
+}
+
+.slider-container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.color-input {
+    display: block;
+    margin-top: 5px;
+}
+
+.remove-color-btn {
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+#codeContainer {
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 80vmin;
+    height: 30vmin;
+    white-space: pre-wrap;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+h4 {
+    color: #333;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input[type="number"],
+select,
+button {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: auto;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+input[type="range"] {
+    width:auto;
+    margin-bottom: 10px;
+    --webkit-appearance: none;
+    background: transparent;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #4caf50;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    background: #45a049;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    width: auto;
+    height: 6px;
+    cursor: pointer;
+    background: #ddd;
+    border-radius: 3px;
+}
+
+select {
+    appearance: none;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: auto;
+    box-sizing: border-box;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+button {
+    background-color: #4caf50;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+input[type="color"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+code {
+    display: block;
+    white-space: pre-wrap;
+    font-family: 'Courier New', Courier, monospace;
+    color: #333;
+}

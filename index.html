@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <div id="container">
+        <div>
+            <h4>Tamaño (Porcentaje):</h4>
+            <div class="slider-container">
+                <label for="previewWidth">Ancho:</label>
+                <input type="number" id="previewWidth" min="0" max="100" value="50" onchange="applyPreviewSize()">
+            </div>
+
+            <div class="slider-container">
+                <label for="previewHeight">Altura:</label>
+                <input type="number" id="previewHeight" min="0" max="100" value="50" onchange="applyPreviewSize()">
+            </div>
+
+            <h4>Bordes:</h4>
+            <div class="slider-container">
+                <label for="borderPreset">Forma del Borde:</label>
+                <select id="borderPreset" onchange="applyBorderPreset()">
+                    <option value="null">Ninguno</option>
+                    <option value="simple">Simple</option>
+                    <option value="complex">Complejo</option>
+                </select>
+            </div>
+            <div id="bordeSimple" style="display: none;">
+                <div class="slider-container">
+                    <label for="BBB">Borde redondo:</label>
+                    <input type="range" id="BBB" min="0" max="50" step="1" value="0" onchange="applyBorderRadiusS()">
+                    <output for="BBB">10</output>
+                </div>
+            </div>
+            <div id="bordeComplejo" style="display: none;">
+                <div class="slider-container">
+                    <label for="topLeft">Arriba:</label>
+                    <input type="range" id="topLeft" min="0" max="100" step="1" value="0" onchange="applyBorderRadius()">
+                    <output for="topLeft">10</output>
+                </div>
+    
+                <div class="slider-container">
+                    <label for="topRight">Derecha:</label>
+                    <input type="range" id="topRight" min="0" max="100" step="1" value="0" onchange="applyBorderRadius()">
+                    <output for="topRight">90</output>
+                </div>
+    
+                <div class="slider-container">
+                    <label for="bottomLeft">Izquierda:</label>
+                    <input type="range" id="bottomLeft" min="0" max="100" step="1" value="0" onchange="applyBorderRadius()">
+                    <output for="bottomLeft">20</output>
+                </div>
+    
+                <div class="slider-container">
+                    <label for="bottomRight">Abajo:</label>
+                    <input type="range" id="bottomRight" min="0" max="100" step="1" value="0"
+                        onchange="applyBorderRadius()">
+                    <output for="bottomRight">80</output>
+                </div>
+            </div>
+
+            <div class="slider-container">
+                <label for="borderSize">Tamaño del borde:</label>
+                <input type="range" id="borderSize" min="0" max="20" step="1" value="2" onchange="applyBorderSize()">
+                <output for="borderSize">2px</output>
+            </div>
+
+            <div class="slider-container">
+                <label for="borderStyle">Estilo del borde:</label>
+                <select id="borderStyle" onchange="applyBorderStyle()">
+                    <option value="solid">Solido</option>
+                    <option value="dashed">Discontinuo</option>
+                    <option value="dotted">Punteado</option>
+                    <option value="none">Ninguno</option>
+                </select>
+            </div>
+
+            <div class="slider-container">
+                <label for="borderColor">Color del borde:</label>
+                <input type="color" id="borderColor" onchange="applyBorderColor()">
+            </div>
+            <h4>fondo:</h4>
+            <div class="slider-container">
+                <label for="backgroundColor">Color de fondo:</label>
+                <input type="color" id="backgroundColor" onchange="applyBackgroundColor()">
+            </div>
+
+            <div class="slider-container">
+                <label for="backgroundGradient">Degradado de fondo:</label>
+                <input type="checkbox" id="backgroundGradient" onchange="applyBackgroundGradient()">
+            </div>
+
+            <div id="gradientControls" style="display: none;">
+                <div class="slider-container">
+                    <label for="gradientColors">Colores del degradado:</label>
+                    <div id="gradientColorsContainer"></div>
+                    <button onclick="addGradientColor()">Agregar Color</button>
+                </div>
+
+                <div class="slider-container">
+                    <label for="gradientDirection">Dirección del degradado (en grados):</label>
+                    <input type="number" id="gradientDirection" min="0" max="360" value="45"
+                        onchange="applyBackgroundGradient()">
+                </div>
+                <div class="slider-container">
+                    <label for="gradientType">Tipo de Degradado:</label>
+                    <select id="gradientType" onchange="applyBackgroundGradient()">
+                        <option value="linear">Lineal</option>
+                        <option value="radial">Radial</option>
+                    </select>
+                </div>
+
+            </div>
+            <h4>Sombras:</h4>
+            <div class="slider-container">
+                <label for="shadowCount">Número de Sombras:</label>
+                <input type="number" id="shadowCounters" min="0" max="5" value="0" onchange="addBoxShadowControls()">
+            </div>
+
+            <div id="boxShadowControls"></div>
+        </div>
+        <div class="cuadro">
+            <div id="preview"></div>
+        </div>
+        <div id="codeContainer"></div>
+    </div>
+
+    <script src="./index.js"></script>
+
+</body>
+
+</html>
